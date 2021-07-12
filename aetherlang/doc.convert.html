@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: base</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: Convert</h1>
+    <p>
+      Provides functions for conversions of basic types.
+    </p>
+    <code id="num2int">
+      <br>
+      <span style="font-weight:bold">num2int</span> n <span style="color:grey"> @-> number <br>
+        @ where n: number<br>
+        @ truncates any number to an integer which is still a number in Aetherlang's type system. <br>
+      </span>
+    </code>
+    <code id="string">
+      <br>
+      <span style="font-weight:bold">string</span> arg <span style="color:grey"> @-> string <br>
+        @ where arg: any<br>
+        @ provides conversion of values to string using built-in julia function. avoid it if possible for now. <br>
+      </span>
+    </code>
+    <code id="str2num">
+      <br>
+      <span style="font-weight:bold">str2num</span> str <span style="color:grey"> @-> number <br>
+        @ where str: string<br>
+        @ can be used to parse numbers (both integer and real) from strings. however, you should prefer <a href="doc.base.html#do">do</a>. <br>
+      </span>
+    </code>
+    <code id="str2sym">
+      <br>
+      <span style="font-weight:bold">str2sym</span> str <span style="color:grey"> @-> symbol <br>
+        @ where str: string<br>
+        @ converts STR into a SYMBOL (without quotation marks). <br>
+        @ example:<br>
+        @ eq? (str2sym "exp") :exp @-> 1 <br>
+      </span>
+    </code>
+  </div>
+  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
+</body>
+</html>

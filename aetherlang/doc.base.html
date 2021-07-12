@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
   <title>Aetherlang: base</title>
 </head>
 <body>
@@ -208,7 +209,7 @@
         @ where coll: array<br>
         @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: number <br>
         @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: any <br>
-        @ returns a phantom representing COLL but with VAL at INDX instead. <br>
+        @ returns a phantom representing COLL but with VAL at INDX instead. such phantom can be used as an array. <br>
       </span>
     </code>
     <code id="phantompush">
@@ -216,7 +217,7 @@
       <span style="font-weight:bold">phpush</span><br>
       <span style="font-weight:bold">phantompush</span> coll val <span style="color:grey"> @-> phantomarray <br>
         @ where coll: array <br>
-        @ returns a phantom representing COLL but with VAL added to the end. <br>
+        @ returns a phantom representing COLL but with VAL added to the end. such phantom can be used as an array.<br>
       </span>
     </code>
     <code id="push">
