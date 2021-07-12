@@ -1,0 +1,46 @@
+/* MAIN STYLE */
+
+* {
+  box-sizing: border-box;
+}
+.menu {
+  width: 15%;
+  float: left;
+}
+.main {
+  width: 85%;
+  float: left;
+}
+.subleft {
+  width: 42.5%;
+  float: left;
+}
+.subright {
+  width: 42.5%;
+  float: right;
+}
+body {
+  background-color: rgb(20, 20, 20);
+}
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+p {
+  color: white;
+}
+ul {
+  color: white;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+a {
+  color: plum;
+}
+code {
+  color: white;
+}

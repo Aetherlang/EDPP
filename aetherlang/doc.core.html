@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <title>Aetherlang: base</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">Aetherlang Core</h1>
+    <p>
+      Core is something implemented in the interpreter itself. You don't need to include anything for it to work, not even <a href="doc.base.html">base</a>.
+    </p>
+    <code id="call">
+      <br>
+      <span style="color:grey">
+        @ comment <br>
+      </span>
+    </code>
+    <code id="call">
+      <br>
+      <span style="font-weight:bold">f</span> arg1...argN<span style="color:grey"> @-> any <br>
+        @ where f: function<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg1...argN: any <br>
+        @ calls F with given arguments. returns the result. <br>
+      </span>
+    </code>
+    <code id="parentheses">
+      <br>
+      <span style="font-weight:bold;color:plum">(</span>exp<span style="font-weight:bold;color:plum">)</span><span style="color:grey"> @-> any <br>
+        @ evaluates EXP. returns the result. <br>
+      </span>
+    </code>
+    <code id="quote">
+      <br>
+      <span style="font-weight:bold;color:plum">:</span>exp<span style="color:grey"> @-> symbol <br>
+        @ quotes anything that was in EXP and returns it as a symbol that can be either evaluated with <a href="doc.base.html#do">do</a> or used as a string. <br>
+      </span>
+    </code>
+    <code id="set">
+      <br>
+      x <span style="font-weight:bold;color:plum">=</span> y<span style="color:grey"> @-> any <br>
+        @ where y: any<br>
+        @ binds name X to Y. if the name X has "aether." prefix it will be created in ether. returns Y. <br>
+      </span>
+    </code>
+    <code id="function">
+      <br>
+      <span style="font-weight:bold;color:plum">function</span> <span style="font-weight:bold">f</span> [argnames...] <span style="font-weight:bold;color:plum">=</span> body <span style="color:grey"> @-> function <br>
+        @ creates a function with the name F and returns it. <br>
+      </span>
+    </code>
+    <code id="dim">
+      <br>
+      <span style="font-weight:bold;color:plum">dim</span> <span style="font-weight:bold">d</span> <br>
+        ...<br>
+      <span style="font-weight:bold;color:plum">enddim</span> <span style="font-weight:bold">d</span><span style="color:grey"> <br>
+        @ separates a dimension block named D that is fully skipped by interpreter and then evaluated line by line in parallel to currently running dimensions. <br>
+      </span>
+    </code>
+    <code id="dim">
+      <br>
+      <span style="font-weight:bold;color:plum">ritual</span><br>
+        ...<br>
+      <span style="font-weight:bold;color:plum">endrit</span><span style="color:grey"> <br>
+        @ separates a ritual block that is fully skipped by interpreter and then evaluated line by line in parallel to currently running rituals. <br>
+      </span>
+    </code>
+    <code id="dimname">
+      <br>
+      <span style="font-weight:bold">dimname</span><span style="color:grey"> @-> string <br>
+        @ a special name that is always equal to the name of the current dimension. <br>
+      </span>
+    </code>
+    <code id="void">
+      <br>
+      <span style="font-weight:bold">void</span><span style="color:grey"> @-> void <br>
+        @ constant VOID of type void. <br>
+      </span>
+    </code>
+    <code id="use">
+      <br>
+      <span style="font-weight:bold">use</span> libname [prefix] <span style="color:grey"> @-> void <br>
+        @ where libname: symbol or string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix: symbol or string <br>
+        @ includes all the names defined in a preinstalled library LIBNAME to the namespace. if PREFIX was given, puts PREFIX before each of these names. <br>
+      </span>
+    </code>
+  </div>
+  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
+</body>
+</html>

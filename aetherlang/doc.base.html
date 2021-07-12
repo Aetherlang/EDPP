@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <title>Aetherlang: base</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: Base</h1>
+    <p>
+      Base library is a library you must include at the beginning of any program, as it contains definitions for most basic functions like, say, addition or substraction. This page is mostly raw documentation, since most of the functions in base are easy to describe with no illustrations. See <a href="tut1.html">tutorials</a> if you don't understand this library.
+    </p>
+    <code id="aetherclear">
+      <br>
+      <span style="font-weight:bold">aetherclear</span> dummy <span style="color:grey"> @-> void <br>
+        @ where dummy: any <br>
+        @ removes everything from ether. <br>
+      </span>
+    </code>
+    <code id="aetherdel">
+      <br>
+      <span style="font-weight:bold">aetherdel</span> name <span style="color:grey"> @-> void <br>
+        @ where name: symbol or string <br>
+        @ removes NAME from ether. NAME should not include the "aether." prefix.<br>
+      </span>
+    </code>
+    <code id="aethersize">
+      <br>
+      <span style="font-weight:bold">aethersize</span> dummy <span style="color:grey"> @-> number <br>
+        @ where dummy: any <br>
+        @ returns the number of names defined in ether. <br>
+      </span>
+    </code>
+    <code id="aetherwait">
+      <br>
+      <span style="font-weight:bold">aetherwait</span> name <span style="color:grey"> @-> void <br>
+        @ where name: symbol or string <br>
+        @ waits for a certain NAME to appear in ether, pauses the calling dimension's execution until that point. NAME should not include the "aether." prefix. <br>
+      </span>
+    </code>
+    <code id="call">
+      <br>
+      <span style="font-weight:bold">call</span> f args <span style="color:grey"> @-> any <br>
+        @ where f: function<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args: array <br>
+        @ calls function F with given set of parameters. returns the result<br>
+      </span>
+    </code>
+    <code id="collect">
+      <br>
+      <span style="font-weight:bold">arr</span><br>
+      <span style="font-weight:bold">array</span><br>
+      <span style="font-weight:bold">collect</span> arg1...argN <span style="color:grey"> @-> array <br>
+        @ where arg1...argN: any<br>
+        @ returns an array of given arguments. <br>
+      </span>
+    </code>
+    <code id="contains?">
+      <br>
+      <span style="font-weight:bold">in?</span><br>
+      <span style="font-weight:bold">contains?</span> val coll <span style="color:grey"> @-> void or number <br>
+        @ where val: any<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coll: array <br>
+        @ returns index of the first entry of VAL in COLL or void. <br>
+      </span>
+    </code>
+    <code id="dimwait">
+      <br>
+      <span style="font-weight:bold">dimwait</span> name <span style="color:grey"> @-> void <br>
+        @ where name: symbol or string <br>
+        @ waits for a certain dimension to end, pauses the calling dimension's execution until that point. <br>
+      </span>
+    </code>
+    <code id="do">
+      <br>
+      <span style="font-weight:bold">do</span> exp1...expN <span style="color:grey"> @-> any <br>
+        @ where exp1 ... expN: symbols <br>
+        @ evaluates expressions given as symbols in that exact order. returns the result of the last evaluation. <br>
+      </span>
+    </code>
+    <code id="emplace">
+      <br>
+      <span style="font-weight:bold">emp</span><br>
+      <span style="font-weight:bold">emplace</span> coll indx val <span style="color:grey"> @-> array <br>
+        @ where coll: array<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: number <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: any <br>
+        @ returns COLL but with VAL at INDX instead. <br>
+      </span>
+    </code>
+    <code id="equal?">
+      <br>
+      <span style="font-weight:bold">eq</span><br>
+      <span style="font-weight:bold">eq?</span><br>
+      <span style="font-weight:bold">equal?</span> arg1...argN <span style="color:grey"> @-> void or 1 <br>
+        @ where arg1...argN: any<br>
+        @ returns 1 if all of the given arguments are equal and void otherwise. <br>
+      </span>
+    </code>
+    <code id="exists?">
+      <br>
+      <span style="font-weight:bold">exists?</span> name <span style="color:grey"> @-> void or 1<br>
+        @ where name: symbol or string<br>
+        @ checks whether a certain name exists. to check in ether simply include "aether." prefix in the name. <br>
+      </span>
+    </code>
+    <code id="first">
+      <br>
+      <span style="font-weight:bold">fst</span><br>
+      <span style="font-weight:bold">first</span> coll <span style="color:grey"> @-> any <br>
+        @ where coll: any <br>
+        @ returns the first element of COLL. <br>
+      </span>
+    </code>
+    <code id="for">
+      <br>
+      <span style="font-weight:bold">for</span> itername iteratable action <span style="color:grey"> @-> any <br>
+        @ where itername: symbol<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iteratable: array or string <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action: symbol <br>
+        @ evaluates the action given as symbol for each element of the ITERATABLE. returns the result of the last evaluation. <br>
+      </span>
+    </code>
+    <code id="get">
+      <br>
+      <span style="font-weight:bold">get</span> coll indx <span style="color:grey"> @-> any <br>
+        @ where coll: any <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: any <br>
+        @ indexes COLL at INDX. <br>
+      </span>
+    </code>
+    <code id="gotime">
+      <br>
+      <span style="font-weight:bold">gotime</span> t <span style="color:grey"> @-> void <br>
+        @ where t: timepoint<br>
+        @ jumps to a given timepoint. safe "goto" method <br>
+      </span>
+    </code>
+    <code id="if">
+      <br>
+      <span style="font-weight:bold">if</span> cond exp1 [exp2]<span style="color:grey"> @-> any <br>
+        @ where cond: any<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp1: symbol <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp2: symbol <br>
+        @ if COND is void does nothing or evaluates EXP2 (if given). evaluates EXP1 otherwise. <br>
+      </span>
+    </code>
+    <code id="include">
+      <br>
+      <span style="font-weight:bold">include</span> path <span style="color:grey"> @-> void <br>
+        @ where path: string<br>
+        @ includes a ".aein" definition-file from a given path. <br>
+      </span>
+    </code>
+    <code id="lambda">
+      <br>
+      <span style="font-weight:bold">lambda</span> argname1...argnameN exp <span style="color:grey"> @-> function <br>
+        @ where argname1...argnameN: symbols<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp: symbol <br>
+        @ makes a lambda function with given argument names and EXP as its body. <br>
+      </span>
+    </code>
+    <code id="last">
+      <br>
+      <span style="font-weight:bold">last</span> coll <span style="color:grey"> @-> any <br>
+        @ where coll: any <br>
+        @ returns the last element of COLL. <br>
+      </span>
+    </code>
+    <code id="len">
+      <br>
+      <span style="font-weight:bold">len</span> coll <span style="color:grey"> @-> number <br>
+        @ where coll: any <br>
+        @ returns length of the given instance if it is possible. <br>
+      </span>
+    </code>
+    <code id="not">
+      <br>
+      <span style="font-weight:bold">not</span> arg <span style="color:grey"> @-> void or 1 <br>
+        @ where arg: any<br>
+        @ returns 1 if ARG is void and void otherwise. <br>
+      </span>
+    </code>
+    <code id="or">
+      <br>
+      <span style="font-weight:bold">or</span> arg1 arg2 <span style="color:grey"> @-> void or 1 <br>
+        @ where arg1: any<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg2: any <br>
+        @ returns 1 if ARG1 or ARG2 is not equal to void. <br>
+      </span>
+    </code>
+    <code id="phantomemplace">
+      <br>
+      <span style="font-weight:bold">phemp</span><br>
+      <span style="font-weight:bold">phantomemplace</span> coll indx val <span style="color:grey"> @-> phantomarray <br>
+        @ where coll: array<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: number <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: any <br>
+        @ returns a phantom representing COLL but with VAL at INDX instead. <br>
+      </span>
+    </code>
+    <code id="phantompush">
+      <br>
+      <span style="font-weight:bold">phpush</span><br>
+      <span style="font-weight:bold">phantompush</span> coll val <span style="color:grey"> @-> phantomarray <br>
+        @ where coll: array <br>
+        @ returns a phantom representing COLL but with VAL added to the end. <br>
+      </span>
+    </code>
+    <code id="push">
+      <br>
+      <span style="font-weight:bold">push</span> coll val <span style="color:grey"> @-> array <br>
+        @ where coll: array <br>
+        @ returns COLL but with VAL added to the end. <br>
+      </span>
+    </code>
+    <code id="removeat">
+      <br>
+      <span style="font-weight:bold">last</span> coll indx <span style="color:grey"> @-> array <br>
+        @ where coll: array <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: number<br>
+        @ returns COLL without the element at INDX. <br>
+      </span>
+    </code>
+    <code id="set">
+      <br>
+      <span style="font-weight:bold">set</span> name value <span style="color:grey"> @-> any <br>
+        @ where name: symbol or string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: any <br>
+        @ binds NAME with a given VALUE. returns that VALUE. <br>
+      </span>
+    </code>
+    <code id="timepoint">
+      <br>
+      <span style="font-weight:bold">timepoint</span> dummy <span style="color:grey"> @-> timepoint <br>
+        @ where dummy: any<br>
+        @ returns a timepoint object. <br>
+      </span>
+    </code>
+    <code id="typeof">
+      <br>
+      <span style="font-weight:bold">typeof</span> arg <span style="color:grey"> @-> symbol <br>
+        @ where arg: any<br>
+        @ returns a symbol representing the type of ARG. <br>
+      </span>
+    </code>
+    <code id="until">
+      <br>
+      <span style="font-weight:bold">until</span> cond action <span style="color:grey"> @-> any <br>
+        @ where cond: symbol<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action: symbol <br>
+        @ evaluates the action given as symbol until a condition COND becomes true. returns the result of the last evaluation. <br>
+      </span>
+    </code>
+    <code id="plus">
+      <br>
+      <span style="font-weight:bold">+</span> arg1...argN <span style="color:grey"> @-> number <br>
+        @ where arg1...argN: numbers<br>
+        @ returns the sum of all the arguments. <br>
+      </span>
+    </code>
+    <code id="minus">
+      <br>
+      <span style="font-weight:bold">-</span> arg1 [arg2] <span style="color:grey"> @-> number <br>
+        @ where arg1: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg2: number <br>
+        @ returns the difference of the arguments if two arguments were given. returns negative of the argument if one was given. <br>
+      </span>
+    </code>
+    <code id="*">
+      <br>
+      <span style="font-weight:bold">*</span> arg1...argN <span style="color:grey"> @-> number or string <br>
+        @ where arg1...argN: numbers or strings <br>
+        @ returns the product of all the arguments or concatenates all of them if they are strings of characters. <br>
+      </span>
+    </code>
+    <code id="minus">
+      <br>
+      <span style="font-weight:bold">/</span> arg1 arg2 <span style="color:grey"> @-> number <br>
+        @ where arg1: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg2: number <br>
+        @ divides ARG1 by ARG2 <br>
+      </span>
+    </code>
+    <code id="less">
+      <br>
+      <span style="font-weight:bold"><</span> arg1 arg2 <span style="color:grey"> @-> void or 1 <br>
+        @ where arg1: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg2: number <br>
+        @ returns 1 if ARG1 is less than ARG2 and void otherwise <br>
+      </span>
+    </code>
+    <code id="more">
+      <br>
+      <span style="font-weight:bold">></span> arg1 arg2 <span style="color:grey"> @-> void or 1 <br>
+        @ where arg1: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg2: number <br>
+        @ returns 1 if ARG1 is bigger than ARG2 and void otherwise <br>
+      </span>
+    </code>
+  </div>
+  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
+</body>
+</html>

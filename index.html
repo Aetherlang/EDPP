@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    /* Create two equal columns that sits next to each other */
+    .column {
+      flex: 50%;
+      padding: 0 4px;
+    }
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+  </style>
+  <title>EDPP</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="index.html">EDPP</a></li>
+    <li><a href="aetherlang/index.html">Aetherlang Wiki</a></li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">Ether-Dimensional Programming Paradigm</h1>
+    <br>
+    <h2 align="middle">The Paradigm</h2>
+    <p>Ether-dimensional programming paradigm (EDPP) was originally designed as an experiment. This website provides basic information on it and the Aetherlang programming language made to demonstrate basic concepts.</p>
+    <p>Main features of the EDPP:
+      <ul>
+        <li>Easy parallelism through nested dimensions</li>
+        <li>Global namespace ("ether") fully accessible at any given moment from any dimension</li>
+        <li>Any name defined outside ether (in dimensions) is constant</li>
+        <li>Safe "goto" statements</li>
+      </ul>
+    </p>
+    <p>Other ideas that consequently occur:
+      <ul>
+        <li>EDPP languages can also be functional</li>
+        <li>Concepts of dimensions and functions can be blended</li>
+        <li>There might be multiple ethers (for different data types) in strongly typed languages</li>
+      </ul>
+    </p>
+    <h2 align="middle">How it works</h2>
+    <p>
+      Here are some illutrations of how program flow in the paradigm looks like (I hate UML, flow-style diagrams are much more representative for this).
+      <br>The flow of a regular program without parallelism could look like this:
+    </p>
+  <div class="row">
+    <div class="column">
+      <img src="img/flow0.png" style="height:512px;width:256px">
+      <p style="color:grey" align="center">simple flow</p>
+    </div>
+    <div class="column">
+      <img src="img/flow1.png" style="height:512px;width:256px">
+      <p style="color:grey" align="center">flow with a condtion Φ and a loop L</p>
+    </div>
+  </div>
+    <p>
+      However, in EDPP you can easily construct nested parallel dimensions for the interpreter or compiler, which allows you to have multiple flows that you can manage with primitive tools. Most importantly, when running a new dimension from the current one, its namespace gets carried further via namespace hierarchy. Note that in Aetherlang, after a namespace is created any changes to it do not result into changes in other namespaces in the hierarchy.
+    </p>
+    <div class="row">
+      <div class="column">
+        <img src="img/flow2.png" style="height:512px;width:256px">
+      </div>
+      <div class="column">
+        <code>
+          <span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>base<br>
+          <br>
+          <span style="font-weight:bold;color:plum">dim</span> D0<br>
+          &nbsp;<span style="font-weight:bold;color:plum">dim</span> D1<br>
+          &nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> D11<br>
+          &nbsp;&nbsp;&nbsp;...<br>
+          &nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> D11<br>
+          &nbsp;<span style="font-weight:bold;color:plum">enddim</span> D1<br>
+          &nbsp;<span style="font-weight:bold;color:plum">dim</span> D2<br>
+          &nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> D12<br>
+          &nbsp;&nbsp;&nbsp;...<br>
+          &nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> D12<br>
+          &nbsp;&nbsp;J <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">timepoint</span> void<br>
+          &nbsp;&nbsp;<span style="font-weight:bold">if</span> [cond] <span style="font-weight:bold;color:plum">:</span>(<span style="font-weight:bold">gotime</span> J)<br>
+          &nbsp;&nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D21<br>
+          &nbsp;<span style="font-weight:bold;color:plum">enddim</span> D2<br>
+          &nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D1<br>
+          &nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D2<br>
+          &nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D11<br>
+          <span style="font-weight:bold;color:plum">enddim</span> D0<br>
+        </code>
+      </div>
+    </div>
+    <p style="color:grey" align="center">EDPP example with dimensions Dx and a loop J.</p>
+    <h2 align="middle">Languages</h2>
+    <p>For now, there's only one language designed specifically for the EDPP. You can help to spread this experimental idea by creating more or by writing new interpreters and libraries for the existing one. Contact <a href="author.tmp.html">me</a> and I'll put your creation on the list.</p>
+    <ul>
+      <li>Aetherlang (<a href="aetherlang/index.html">wiki</a>/<a href="https://github.com/gojakuch/aetherlang">interpreter</a>)</li>
+    </ul>
+  </div>
+  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  <p align="center">
+    <a href="author.tmp.html">About Author</a>
+  </p>
+</body>
+</html>
