@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <style>
+  a {
+    color: antiquewhite;
+  }
+  </style>
+  <title>Aetherlang: crystals</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: Crystals</h1>
+    <p>
+      "Crystals" is a library that provides tools for managing Aetherlang's unordered collections - crystals. For the most part, they act like sets of data. The difference is that crystals are immutable.
+    </p>
+    <p style="color: antiquewhite">
+      WARNING: THIS LIBRARY IS YET TO BE IMPROVED. THERE IS NO WAY YOU CAN USE PHANTOM CRYSTALS FOR NOW.
+    </p>
+    <h2 align="middle">Types</h2>
+    <div class="row">
+      <div class="column">
+    <img src="../img/libs/crystals/crystals.crystal.png" style="float: left;">
+    </div>
+    <div class="column">
+      <img src="../img/libs/crystals/crystals.phantomcrystal.png" style="float: right;">
+      </div>
+    </div>
+    <div class="row">
+    <div class="column">
+    <code>
+      <span style="color:grey">crystals.</span>crystal<br>
+    </code>
+    </div>
+  <div class="column">
+<code style="float: right;">
+  <span style="color:grey">crystals.</span>phantomcrystal<br>
+</code>
+</div>
+    </div>
+    <h2 align="middle">Functions</h2>
+    <div class="row">
+      <div class="column">
+    <code id="crystal">
+      <br>
+      <span style="font-weight:bold">crystal</span> arg1...argN <span style="color:grey"> @-> crystals.crystal <br>
+        @ where arg1...argN: any<br>
+        @ makes a crystal of given elements. <br>
+      </span>
+    </code>
+  </div>
+  <div class="column">
+    <img src="../img/libs/crystals/crystal.png" style="width:96px;height:96px">
+  </div>
+  </div>
+  <div class="row">
+    <div class="column">
+    <code id="add">
+      <br>
+      <span style="font-weight:bold">add</span> cr val <span style="color:grey"> @-> crystals.crystal <br>
+        @ where cr: crystals.crystal<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val: any <br>
+        @ returns CR but with additional VAL in it. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+      <img src="../img/libs/crystals/add.png" style="width:96px;height:96px">
+    </div>
+    </div>
+    <div class="row">
+    <div class="column">
+    <code id="remove">
+      <br>
+      <span style="font-weight:bold">remove</span> cr val <span style="color:grey"> @-> crystals.crystal <br>
+        @ where cr: crystals.crystal<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val: any <br>
+        @ returns CR but without VAL in it. returns the same CR if there's no VAL in it. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+      <img src="../img/libs/crystals/remove.png" style="width:96px;height:96px">
+    </div>
+    </div>
+    <br>
+    <p>
+      Note that <code><a href="doc.base.html#contains?">contains?</a></code> from <a href="doc.base.html">base</a> works perfectly fine with crystals too, except it will always return 1 or void, since there is no indexing in crystals.
+    </p>
+  </div>
+  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
+</body>
+</html>
