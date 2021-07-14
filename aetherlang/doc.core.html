@@ -70,7 +70,7 @@
         @ separates a dimension block named D that is fully skipped by interpreter and then evaluated line by line in parallel to currently running dimensions. <br>
       </span>
     </code>
-    <code id="dim">
+    <code id="ritual">
       <br>
       <span style="font-weight:bold;color:plum">ritual</span><br>
         ...<br>
@@ -78,18 +78,19 @@
         @ separates a ritual block that is fully skipped by interpreter and then evaluated line by line in parallel to currently running rituals. <br>
       </span>
     </code>
-    <code id="dimname">
-      <br>
-      <span style="font-weight:bold">dimname</span><span style="color:grey"> @-> string <br>
-        @ a special name that is always equal to the name of the current dimension. <br>
-      </span>
+    <h2 align="middle">Types</h2>
+    <code>
+      <span style="color:grey">ANY @ not a type</span><br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> number <br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> symbol <span style="color:grey">┐</span><br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> string <span style="color:grey">┘ @ these two are for the most part interchangeable. </span><br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> timepoint <span style="color:grey"> @ basically a marker for <a href="doc.base.html#gotime">gotime</a>. cannot be instantiated in the ether.</span><br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> void<span style="color:grey"> @ is used to represent the absence of value. also is the only type (and value) considered FALSE logically. </span><br>
+      &nbsp;&nbsp;<span style="color:grey">╠</span> function<br>
+      &nbsp;&nbsp;<span style="color:grey">╚</span> array<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:grey">╚</span> phantomarray <span style="color:grey">@ in standard libraries, any function that requires an array can also be given a phantomarray instead. not vice-versa. </span><br>
     </code>
-    <code id="void">
-      <br>
-      <span style="font-weight:bold">void</span><span style="color:grey"> @-> void <br>
-        @ constant VOID of type void. <br>
-      </span>
-    </code>
+    <h2 align="middle">Functions</h2>
     <code id="use">
       <br>
       <span style="font-weight:bold">use</span> libname [prefix] <span style="color:grey"> @-> void <br>
@@ -98,8 +99,29 @@
         @ includes all the names defined in a preinstalled library LIBNAME to the namespace. if PREFIX was given, puts PREFIX before each of these names. <br>
       </span>
     </code>
+    <h2 align="middle">Constants</h2>
+    <code id="void">
+      <br>
+      <span style="font-weight:bold">void</span><span style="color:grey"> @ of void <br>
+        @ constant VOID of type void. <br>
+      </span>
+    </code>
+    <code id="dimname">
+      <br>
+      <span style="font-weight:bold">dimname</span><span style="color:grey"> @ of string <br>
+        @ a special name that is always equal to the name of the current dimension. <br>
+      </span>
+    </code>
+    <code id="true">
+      <br>
+      <span style="color:grey">[v0.2]</span><br>
+      <span style="font-weight:bold">true</span><span style="color:grey"> @ of number <br>
+        @ constant TRUE that is equal to 1. <br>
+      </span>
+    </code>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
   </div>
-  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
 
 </body>
 </html>

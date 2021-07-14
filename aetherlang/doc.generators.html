@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: generators</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: Generators</h1>
+    <p>
+      Generators is a library that provides functions for creating arrays of certain patterns.
+    </p>
+    <code id="range">
+      <br>
+      <span style="font-weight:bold">rng</span><br>
+      <span style="font-weight:bold">range</span> start [step] end <span style="color:grey"> @-> array <br>
+        @ where start: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;step: number <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end: number <br>
+        @ creates an array (without actually allocating it) with numbers from START to END with STEP. STEP defaults to 1. <br>
+      </span>
+    </code>
+    <code id="gencoll">
+      <br>
+      <span style="font-weight:bold">gencoll</span> exp varname arr [cond] [else] <span style="color:grey"> @-> array <br>
+        @ where exp: symbol<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varname: symbol or string <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr: array <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cond: symbol <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else: symbol <br>
+        @ creates an array by looping through ARR with VARNAME and evaluating EXP. if COND is given and evaluated to void and ELSE is given, puts evaluated ELSE expression instead. if COND is void but ELSE is not given, skips the step. <br>
+      </span>
+    </code>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+</body>
+</html>

@@ -26,18 +26,49 @@
     <h2 align="middle">Types</h2>
     <code>
       <span style="color:grey">fio.</span>file<br>
+      <span style="color:grey">@ a simple container for filestreams. </span><br>
     </code>
     <h2 align="middle">Functions</h2>
-    <code id="crystal">
+    <code id="open">
       <br>
-      <span style="font-weight:bold">open</span> arg1...argN <span style="color:grey"> @-> crystals.crystal <br>
-        @ where arg1...argN: any<br>
-        @ makes a crystal of given elements. <br>
+      <span style="font-weight:bold">open</span> filename mode <span style="color:grey"> @-> fio.file <br>
+        @ where filename: string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode: string ("r", "w", "a")<br>
+        @ opens a filestream of a given type. "r" - read, "w" - write, "a" - append. <br>
       </span>
     </code>
-
+    <code id="close">
+      <br>
+      <span style="font-weight:bold">close</span> file <span style="color:grey"> @-> void <br>
+        @ where file: fio.file<br>
+        @ closes a filestream. <br>
+      </span>
+    </code>
+    <code id="fprint">
+      <br>
+      <span style="font-weight:bold">fprint</span> file arg1...argN <span style="color:grey"> @-> void <br>
+        @ where file: fio.file<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg1...argN: any<br>
+        @ prints arguments into a filestream. <br>
+      </span>
+    </code>
+    <code id="fprintln">
+      <br>
+      <span style="font-weight:bold">fprintln</span> file arg1...argN <span style="color:grey"> @-> void <br>
+        @ where file: fio.file<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arg1...argN: any<br>
+        @ prints arguments and then "\n" into a filestream. <br>
+      </span>
+    </code>
+    <code id="finput">
+      <br>
+      <span style="font-weight:bold">finput</span> file<span style="color:grey"> @-> string <br>
+        @ where file: fio.file<br>
+        @ reads a line from a filestream, returns it as string. <br>
+      </span>
+    </code>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
   </div>
-  <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
 
 </body>
 </html>
