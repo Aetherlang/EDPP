@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: juliacore</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: JuliaCore</h1>
+    <p>
+      An implementation-specific library to interact with the Julia Programming Language. This library is also impossible to use without prefix (typically <code>jl.</code>) since it defines an alternative to <code><a href="doc.base.html#typeof">typeof</a></code> from <a href="doc.base.html">base</a>.
+    </p>
+    <code id="typeof">
+      <br>
+      <span style="font-weight:bold">typeof</span> arg <span style="color:grey"> @-> string <br>
+        @ where arg: any<br>
+        @ returns a string representing the type of ARG in Julia. <br>
+      </span>
+    </code>
+    <code id="eval">
+      <br>
+      <span style="font-weight:bold">eval</span> exp <span style="color:grey"> @-> any <br>
+        @ where exp: symbol or string<br>
+        @ evaluates EXP directly in Julia, wraps the result into AetherlangObject (a regular container for values in Aetherlang). <br>
+      </span>
+    </code>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+</body>
+</html>
