@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <style>
+  a {
+    color: coral;
+  }
+  .column {
+    flex: 33.33%;
+    padding: 0 4px;
+  }
+  </style>
+  <title>Aetherlang: random</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <div class="row">
+      <div class="column">
+    <img src="../img/libs/random/dice.png" style="width:96px;height:96px;float:right">
+    </div>
+      <div class="column">
+    <h1 align="middle">AetherlangLib: Random</h1>
+    </div>
+    <div class="column">
+  <img src="../img/libs/random/dice.png" style="width:96px;height:96px;float:left">
+  </div>
+    </div>
+    <p>
+      "Random" is a library for randomization and random generation.
+    </p>
+    <div class="row">
+      <div class="column">
+    <code id="choose">
+      <br>
+      <span style="font-weight:bold">choose</span> arr <span style="color:grey"> @-> any <br>
+        @ where arr: array<br>
+        @ chooses a random element from ARR and returns it. <br>
+      </span>
+    </code>
+  </div>
+  <div class="column">
+    <img src="../img/libs/random/choose.png" style="width:96px;height:96px;float: right;">
+  </div>
+  </div>
+  <div class="row">
+    <div class="column">
+    <code id="c.rand">
+      <br>
+      <span style="font-weight:bold">c.rand</span> dummy <span style="color:grey"> @-> number <br>
+        @ where dummy: any<br>
+        @ calls "rand()" from the C Programming Language and returns a random integer. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+      <img src="../img/libs/random/c.rand.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+    <div class="column">
+    <code id="c.srand">
+      <br>
+      <span style="font-weight:bold">c.srand</span> seed <span style="color:grey"> @-> void <br>
+        @ where seed: number<br>
+        @ calls "srand(SEED)" from the C Programming Language. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+      <img src="../img/libs/random/c.srand.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+    <div class="column">
+    <code id="shuffled">
+      <br>
+      <span style="font-weight:bold">shuffled</span> arr <span style="color:grey">@-> array <br>
+        @ where arr: array<br>
+        @ returns ARR but randomly shuffled. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+      <img src="../img/libs/random/shuffle.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <br>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+
+</body>
+</html>
