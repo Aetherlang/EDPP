@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: Tutorial #1</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">The Basics</h1>
+    <br>
+    <p>
+      In this tutorial I'll cover the basics of Aetherlang, which includes:
+      <ul>
+        <li><a href="tut1.html#hello-world">"Hello, World!"</a></li>
+        <li><a href="tut1.html#CnV">Constants and variables</a></li>
+        <li><a href="tut1.html#arrays">Arrays</a></li>
+        <li>Functions</li>
+        <li>Printing</li>
+        <li>Condition statements</li>
+        <li>Loops (and why you don't want to use them)</li>
+      </ul>
+    </p>
+    <p>
+      <span style="color: plum">WARNING:</span> I DO NOT RECOMMEND ANYONE NOT FAMILIAR WITH PROGRAMMING TO START WITH THIS LANGUAGE. IT IS OBSCURE, DEMONSTRATIONAL AND WILL CERTAINLY RUIN YOUR FURTHER CAREER.
+    </p>
+    <div id="hello-world">
+      <h2 align="middle">"Hello, World!"</h2>
+      <p>
+        Once you have your Aetherlang interpreter installed properly, try running this simple program on it by saving it into a ".aeth" file and executing.
+      </p>
+      <p>
+        Any tutorial starts with a simple program printing "Hello, World" to console. This one is no exception. And since you are probably already dying from excitement, let me show it to you: <br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="color:grey">@ WE NEED THESE TWO LIBRARIES: "BASE" AND "IO"</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;<span style="color:grey">@ ACTUALLY PRINTING TEXT</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"HELLO WORLD"</span><br>
+        </code>
+      </p>
+      <p>
+        Aetherlang code is not case-sensitive, so you can rewrite the same code in lowercase and try to run it. As you can guess from the example above, any text after <code><span style="color:grey">@</span></code> ("at" symbol) is not evaluated.
+      </p>
+    </div>
+    <div id="CnV">
+      <h2 align="middle">Constants and Variables</h2>
+      <p>
+        Now we're ready for some serious stuff. Let us define some constant names in the main namespace and some variables in ether. <br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;<span style="color:grey">@ MAKE A & B AND CALCULATE THEIR SUM</span><br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">5</span><br>
+           &nbsp;&nbsp;B <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">10</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> (<span style="font-weight:bold">+</span> A B)<br>
+        </code>
+      </p>
+      <p>
+        The above code will output 15. You may have noticed that to compute A+B we need to put parentheses and place the operation (+) first. That is how you do it in Aetherlang. If you don't put parentheses, you are likely to get messy output because the interpreter will see the "println" function and three other names (including "+") that it will consider function's arguments: <br>
+        <code>
+          <br>
+          &nbsp;&nbsp;<span style="color:grey">@ BAD CODE</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">5</span><br>
+           &nbsp;&nbsp;B <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">10</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="font-weight:bold">+</span> A B <span style="color:grey">@ prints "AE_add 5 10" on my version</span><br>
+        </code>
+      </p>
+      <p>
+        Now, because of EDPP style, neither of these A and B is variable. In fact, not only they are both immutable but also constant:<br>
+        <code>
+          <br>
+          &nbsp;&nbsp;<span style="color:grey">@ BAD CODE</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">5</span><br>
+           &nbsp;&nbsp;B <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">10</span><br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">+</span> A B <span style="color:grey">@ ERROR: CONSTANT "A" OF TYPE "NUMBER" CANNOT BE REDEFINED</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> A <br>
+        </code>
+      </p>
+      <p>
+        Aetherlang does provide a separate namespace for variables, though. It is called ether or aether. For name to be defined there, you need to explicitly put "aether." prefix to it:<br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;AETHER.A <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">5</span><br>
+           &nbsp;&nbsp;B <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">10</span><br>
+           &nbsp;&nbsp;AETHER.A <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">+</span> AETHER.A B<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> AETHER.A <br>
+        </code>
+      </p>
+    </div>
+    <div id="arrays">
+      <h2 align="middle">Arrays</h2>
+      <p>
+        Of course, you can assign names other types of values besides numbers. More on basic Aetherlang types can be found <a href="doc.core.html#types">here</a>. Let us see how arrays work, for instance. <br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">COLLECT</span> 1 2 3 4 5<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"array: "</span> A<br>
+        </code>
+      </p>
+      <p>
+        Note that "collect" can be replaced with "array" or "arr" as these are synonyms in Aetherlang. All of them can be used to allocate arrays (sequences) of data.
+      </p>
+    </div>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+</body>
+</html>
