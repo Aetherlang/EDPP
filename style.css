@@ -5,7 +5,7 @@
 }
 .menu {
   width: 15%;
-  float: left;  
+  float: left;
 }
 .main {
   width: 70%;
@@ -59,4 +59,7 @@ code {
 }
 figcaption {
   color: white;
+}
+i {
+  color: rgb(150, 150, 150);
 }

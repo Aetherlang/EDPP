@@ -29,8 +29,7 @@
         <li><a href="tut1.html#arrays">Arrays</a></li>
         <li><a href="tut1.html#functions">Functions</a></li>
         <li><a href="tut1.html#QnS">Quotes and symbols</a></li>
-        <li>Condition statements</li>
-        <li>Loops (and why you don't want to use them)</li>
+        <li><a href="tut1.html#cond">Conditions</a></li>
       </ul>
     </p>
     <p>
@@ -184,6 +183,23 @@
       </p>
       <p>
         You will see that blending macros and functions can get a bit uncomfortable, though, but I plan to change it by introducing a new way of dealing with them in v0.3.
+      </p>
+    </div>
+    <div id="cond">
+      <h2 align="middle">Condition Function (IF)</h2>
+      <p>
+        Aetherlang has a very simple tool for condition statements. It is implemented as a function called "IF" and is available in <a href="doc.base.html#if">base</a>.<br>
+        <code>
+          <br>
+          &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>base<br>
+          &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>io<br>
+          &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>math<br>
+          &nbsp;&nbsp;a <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">intinput</span> <span style="color:plum">"Enter a number: "</span><br>
+          &nbsp;&nbsp;<span style="font-weight:bold">if</span> (<span style="font-weight:bold">eq</span> <span style="color:plum">0</span> (<span style="font-weight:bold">%</span> A <span style="color:plum">2</span>)) <span style="color:plum">:</span>(<span style="font-weight:bold">println</span> A  <span style="color:plum">"is divisible by 2"</span>) <span style="color:plum">:</span>(<span style="font-weight:bold">println</span> A <span style="color:plum">"is not divisible by 2"</span>)<br>
+        </code>
+      </p>
+      <p>
+        If <code>(<span style="font-weight:bold">eq</span> <span style="color:plum">0</span> (<span style="font-weight:bold">%</span> A <span style="color:plum">2</span>))</code> evaluates to void, then "if" evaluates the third argument (which is <code><span style="color:plum">:</span>(<span style="font-weight:bold">println</span> A <span style="color:plum">"is not divisible by 2"</span>)</code> in this case). However, when the first argument is not void, the second one gets evaluated. You can skip the third argument entirely and then "if" will assume there is <code>:void</code> given.
       </p>
     </div>
     <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
