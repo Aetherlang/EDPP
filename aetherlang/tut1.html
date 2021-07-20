@@ -27,8 +27,8 @@
         <li><a href="tut1.html#hello-world">"Hello, World!"</a></li>
         <li><a href="tut1.html#CnV">Constants and variables</a></li>
         <li><a href="tut1.html#arrays">Arrays</a></li>
-        <li>Functions</li>
-        <li>Printing</li>
+        <li><a href="tut1.html#functions">Functions</a></li>
+        <li><a href="tut1.html#QnS">Quotes and symbols</a></li>
         <li>Condition statements</li>
         <li>Loops (and why you don't want to use them)</li>
       </ul>
@@ -116,12 +116,74 @@
           <br>
            &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
            &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
-           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">COLLECT</span> 1 2 3 4 5<br>
-           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"array: "</span> A<br>
+           &nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">COLLECT</span> <span style="color:plum">1 2 3 4 5</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"A is"</span> A<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"first of A is"</span> (<span style="font-weight:bold">FIRST</span> A)<br>
         </code>
       </p>
       <p>
         Note that "collect" can be replaced with "array" or "arr" as these are synonyms in Aetherlang. All of them can be used to allocate arrays (sequences) of data.
+      </p>
+    </div>
+    <div id="functions">
+      <h2 align="middle">Functions</h2>
+      <p>
+        These may come in handy when you need to perform a compund operation multiple times. <br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>base<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>io<br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">function</span> <span style="font-weight:bold">f</span> x y <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">/</span> (<span style="font-weight:bold">*</span> x y) (<span style="font-weight:bold">+</span> x y)<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">println</span> f <span style="color:grey">@ printing the function itself</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">println</span> (<span style="font-weight:bold">f</span> <span style="color:plum">5 6</span>) <span style="color:grey">@ printing the result of the function called with 5 and 6 as its arguments</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">println</span> (<span style="font-weight:bold">f</span> <span style="color:plum">1.2 3.4</span>)<br>
+        </code>
+      </p>
+      <p>
+        Here we've created a function "F" that takes two arguments "x" and "y" and computes "(x*y)/(x+y)". "F" can be used exactly the same way we used "println" and "collect".
+      </p>
+      <p>
+        Let us now create our implementation of "collect":<br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>base<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>io<br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">function</span> <span style="font-weight:bold">ar!</span> <span style="font-weight:bold;color:plum">=</span> oargs <span style="color:grey">@ you can use any characters unused in Aetherlang's syntax to define names, including "!"</span><br>
+           &nbsp;&nbsp;a <span style="font-weight:bold;color:plum">=</span> <span style="font-weight:bold">ar!</span> <span style="color:plum">1 2 3 4 5</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">println</span> <span style="color:plum">"array: "</span> a<br>
+        </code>
+      </p>
+      <p>
+        Seems like "collect" is a very simple function to rewrite ourselves. And it is! Because we can use a certain trick from Aetherlang's Core: when you call a function and give it too many arguments, Aetherlang allocates an array under the name "oargs" which stands for "optional arguments" and puts all the extra arguments in it. Thus, we can create a function that takes no arguments at all and simply set its return value to "oargs".
+      </p>
+      <p>
+        It is important to notice that in Aetherlang you CANNOT call a function with no arguments. Built-in functions that require no data declare "dummy" arguments. Typically, you would call such functions by passing "void" as an argument:<br>
+        <code>
+          <br>
+           &nbsp;&nbsp;...<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">f</span> void<br>
+           &nbsp;&nbsp;...<br><br>
+        </code>
+        Where "void" is a predefined constant you should use to resemble the absence of value or logical fallacy.
+      </p>
+    </div>
+    <div id="QnS">
+      <h2 align="middle">Quotes and Symbols</h2>
+      <p>
+        Now, in a nutshell this all works very simple: You can quote pieces of code to create what is known as symbols. These symbols are like strings (strings of characters created with quotation marks "..."), but they're used to quote programming languages rather than natural ones:
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>BASE<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">USE</span> <span style="font-weight:bold;color:plum">:</span>IO<br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">"HELLO WORLD"</span> <span style="color:grey">@ A STRING</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold">PRINTLN</span> <span style="color:plum">:</span>(HELLO WORLD) <span style="color:grey">@ A SYMBOL</span><br>
+        </code>
+      </p>
+      <p>
+        This is a way of doing meta-coding in Aetherlang. Or rather, it is THE way of doing it. There are no macros here, you can only define functions that operate with symbols instead. One of such functions is "USE" that we've already met. It takes the name of the library to import as a symbol, however, if you pass it the name of the library as string, it will be fine.
+      </p>
+      <p>
+        You will see that blending macros and functions can get a bit uncomfortable, though, but I plan to change it by introducing a new way of dealing with them in v0.3.
       </p>
     </div>
     <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
