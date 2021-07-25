@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: betterstrings</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">AetherlangLib: Betterstrings</h1>
+    <p>
+      Betterstrings provides more tools for working with basic strings of characters. This library was introduced in v0.2.
+    </p>
+    <code id="charemplace">
+      <br>
+      <span style="font-weight:bold">charemp</span><br>
+      <span style="font-weight:bold">charemplace</span> str indx char <span style="color:grey"> @-> string <br>
+        @ where str: string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indx: number <br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char: string <br>
+        @ returns STR but with CHAR at INDX. <br>
+      </span>
+    </code>
+    <code id="digit?">
+      <br>
+      <span style="font-weight:bold">digit?</span> str <span style="color:grey"> @-> void or 1 <br>
+        @ where str: string<br>
+        @ returns 1 if all characters in STR are decimal digits and void otherwise. <br>
+      </span>
+    </code>
+    <code id="printable?">
+      <br>
+      <span style="font-weight:bold">printable?</span> str <span style="color:grey"> @-> void or 1 <br>
+        @ where str: string<br>
+        @ returns 1 if all characters in STR are printable and void otherwise. <br>
+      </span>
+    </code>
+    <code id="punct?">
+      <br>
+      <span style="font-weight:bold">punct?</span> str <span style="color:grey"> @-> void or 1 <br>
+        @ where str: string<br>
+        @ returns 1 if all characters in STR are used for punctuation and void otherwise. <br>
+      </span>
+    </code>
+    <code id="strjoin">
+      <br>
+      <span style="font-weight:bold">strjoin</span> arr [sep] <span style="color:grey"> @-> string <br>
+        @ where arr: array<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sep: string <br>
+        @ concatenates all strings from ARR which should be an array of strings. If SEP is given, puts it in between. <br>
+      </span>
+    </code>
+    <code id="strsplit">
+      <br>
+      <span style="font-weight:bold">strsplit</span> str [sep] <span style="color:grey"> @-> array <br>
+        @ where str: string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sep: string <br>
+        @ splits STR into tokens by SEP, which defaults to " ". <br>
+      </span>
+    </code>
+    <code id="tolowercase">
+      <br>
+      <span style="font-weight:bold">tolowercase</span> str <span style="color:grey"> @-> string <br>
+        @ where str: string<br>
+        @ makes STR lowercase-only. <br>
+      </span>
+    </code>
+    <code id="touppercase">
+      <br>
+      <span style="font-weight:bold">touppercase</span> str <span style="color:grey"> @-> string <br>
+        @ where str: string<br>
+        @ makes STR uppercase-only. <br>
+      </span>
+    </code>
+    <code id="whitespace?">
+      <br>
+      <span style="font-weight:bold">whitespace?</span> str <span style="color:grey"> @-> void or 1 <br>
+        @ where str: string<br>
+        @ returns 1 if all characters in STR are whitespaces and void otherwise. <br>
+      </span>
+    </code>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+
+  </div>
+
+</body>
+</html>

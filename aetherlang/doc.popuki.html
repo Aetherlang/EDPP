@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <style>
+  a {
+    color: darkcyan;
+  }
+  /*.column {
+    flex: 33.33%;
+    padding: 0 4px;
+  }*/
+  </style>
+  <title>Aetherlang: popuki</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <div class="row">
+    <img src="../img/libs/popuki/popuki.png" style="width:512px;height:256px;display:block;margin:auto;">
+    </div>
+    <p>
+      "PopUKi" is a library that collects many popular tools for functional programming and collection processing. This library was introduced in v0.2.
+    </p>
+    <h2 align="middle">Types</h2>
+    <img src="../img/libs/popuki/endtoken.png" style="width:96px;height:96px;display:block;margin:auto;">
+    <center><code><span style="color:grey">popuki.</span>endlisttoken</code></center>
+    <h2 align="middle">Functions</h2>
+    <div class="row">
+      <div class="column">
+    <code id="arrslice">
+      <br>
+      <span style="font-weight:bold">arrslice</span> arr beg fin <span style="color:grey"> @-> array <br>
+        @ where arr: array or string<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beg: number<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fin: number<br>
+        @ slices ARR from index BEG to FIN. if :END is given as FIN, slices to the end. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+    <img src="../img/libs/popuki/arrslice.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+      <div class="column">
+    <code id="arrslicebounds">
+      <br>
+      <span style="font-weight:bold">arrslicebounds</span> slice <span style="color:grey"> @-> array <br>
+        @ where slice: array<br>
+        @ returnes indeces where SLICE has been sliced (as an array of 2 elements) or VOID if SLICE is a full-sized array. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+    <img src="../img/libs/popuki/arrslicebounds.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+      <div class="column">
+    <code id="arrslicerestore">
+      <br>
+      <span style="font-weight:bold">arrslicerestore</span> slice <span style="color:grey"> @-> array <br>
+        @ where slice: array<br>
+        @ restores SLICE to its original unsliced form. returns SLICE if it has not been sliced. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+    <img src="../img/libs/popuki/arrslicerestore.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+      <div class="column">
+    <code id="eleq?">
+      <br>
+      <span style="font-weight:bold">eleq?</span><br>
+      <span style="font-weight:bold">elementsequal?</span> arr1 arr2 <span style="color:grey"> @-> void or 1 <br>
+        @ where arr1: any<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr2: any<br>
+        @ compares two collections element-wise, regardless of their types. <br>
+      </span>
+    </code>
+    </div>
+    <div class="column">
+    <img src="../img/libs/popuki/eleq.png" style="width:96px;height:96px;float: right;">
+    </div>
+    </div>
+    <div class="row">
+      <div class="column">
+    <code id="filter">
+      <br>
+      <span style="font-weight:bold">filter</span> pred coll <span style="color:grey"> @-> array or string <br>
+        @ where pred: function<br>
+        @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coll: array or string<br>
+        @ returns COLL but only with elements that were assigned a non-void value by PRED. <br>
+      </span>
+    </code>
+  </div>
+  <div class="column">
+    <img src="../img/libs/popuki/filter.png" style="width:96px;height:96px;float: right;">
+  </div>
+  </div>
+  <div class="row">
+    <div class="column">
+  <code id="map">
+    <br>
+    <span style="font-weight:bold">map</span> f coll <span style="color:grey"> @-> array or string <br>
+      @ where f: function<br>
+      @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coll: array or string<br>
+      @ calls F on each element of COLL and returns results. <br>
+    </span>
+  </code>
+</div>
+<div class="column">
+  <img src="../img/libs/popuki/map.png" style="width:96px;height:96px;float: right;">
+</div>
+</div>
+<div class="row">
+  <div class="column">
+<code id="reduce">
+  <br>
+  <span style="font-weight:bold">reduce</span> f coll <span style="color:grey"> @-> any <br>
+    @ where f: function<br>
+    @ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coll: array or string<br>
+    @ calls F on each element of COLL sequentially and accumulates the result. <br>
+  </span>
+</code>
+</div>
+<div class="column">
+<img src="../img/libs/popuki/reduce.png" style="width:96px;height:96px;float: right;">
+</div>
+</div>
+    <h2 align="middle">[]-Notation</h2>
+    <p>
+      "PopUKi" also provides another notation for array allocation:<br>
+      <code>
+        <br>
+        <span style="font-weight:bold">F</span> (<span style="color:darkcyan">[</span> a b ... c d <span style="color:darkcyan">]</span>) <span style="color:grey">@ F is called on a newly created array</span><br>
+         <span style="color:grey">@ or</span><br>
+        X <span style="color:darkcyan"><span style="font-weight:bold">=</span> [</span> a b ... c d <span style="color:darkcyan">]</span> <span style="color:grey">@ X is defined as an array<br>
+        @ &nbsp;&nbsp;&nbsp;^-----------^--- these spaces are important</span><br>
+        E <span style="color:darkcyan"><span style="font-weight:bold">=</span> []</span><span style="color:grey"> @ E is set to an empty array. <br>
+        @ &nbsp;&nbsp;&nbsp;^--- no spaces</span><br>
+      </code>
+    </p>
+    <p>
+      It may seem like a fancy macro, however, it is simply a function named "[" and two constants: "]" for endlist-token and "[]" that is equal to an empty array.
+    </p>
+    <br>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+
+</body>
+</html>
