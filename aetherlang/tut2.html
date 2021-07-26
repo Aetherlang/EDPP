@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../img/logo.png">
+  <title>Aetherlang: Tutorial #2</title>
+</head>
+<body>
+  <div class="menu">
+  <ul>
+    <li><a href="../index.html">EDPP</a></li>
+    <li><a href="index.html">Aetherlang Wiki</a>
+      <ul>
+        <li><a href="tut1.html">Tutorial</a></li>
+        <li><a href="https://github.com/gojakuch/aetherlang">Download</a></li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+
+  <div class="main">
+    <h1 align="middle">Dimensions and Rituals</h1>
+    <br>
+    <p>
+      In this tutorial I'll cover the core feature of EDPP and Aetherlang - Dimensional programming. Basically, it's a way of doing computations in parallel. In case you are interested in technical details of implementation of dimensions in Julia version of Aetherlang, you should read the source code. I can only say that it was originally built on multithreading.
+      <ul>
+        <li><a href="tut2.html#syntax">Block Syntax</a></li>
+        <li><a href="tut2.html#SnN">Subdimensions and Namespaces</a></li>
+        <li><a href="tut2.html#interaction">Interacting via the Ether</a></li>
+        <li><a href="tut2.html#rituals">Rituals</a></li>
+      </ul>
+    </p>
+    <div id="syntax">
+      <h2 align="middle">Block Syntax</h2>
+      <p>
+        The syntax of dimensions may look unfamiliar for lispoids (those coding in Lisp). However, it is very simple and, to my mind, much clearer than adding another layer of parentheses (sorry, lispoids, no offense). It was basically the first thing I could think of when making my first notes on dimensional programming so I've decided to stick to this simple design.<br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="color:grey">@ imagine that we import some libraries here</span><br>
+           <br>
+           &nbsp;&nbsp;<span style="color:grey">@ creating simension D0</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> D0 <br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> D1<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> D1<br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> D2<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> D2<br>
+           &nbsp;&nbsp;&nbsp;<span style="color:grey">@ wait for subdimensions</span><br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D1<br>
+           &nbsp;&nbsp;&nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>D2<br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> D0<br>
+        </code>
+      </p>
+      <p>
+        A natural question arises: if dimensions are meant to be executed in parallel, how will this code run? The code above will first push "main" dimension into execution list as it is where everything happens by default (as, say, in the C Programming Language where you should wrap your program into the "main" function). Inside this main dimension, which you can consider our main routine, we then have "dim D0" line that tells the interpreter to form a new dimension with its end being at "enddim D0", label it "d0", and put it onto execution list. Main dimension then skips all this D0 block and since we don't have anything after it, main exits. But our program won't fully stop until all dimensions exit, while we still probably have D0 on our list. By this time it has probably already created D1 and D2 dimensions and awaits them to then finish.
+      </p>
+    </div>
+    <div id="SnN">
+      <h2 align="middle">Subdimensions and Namespaces</h2>
+      <p>
+        Another question that you should ask at this point is about namespaces. If a nested dimension (subdimension) is executed in parallel with its parent dimension, what is with their namespaces? Do they share some names? Yes and no. <br>
+      </p>
+      <div class="row">
+        <div class="column">
+      <code>
+        <br>
+        &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>base<br>
+        &nbsp;&nbsp;<span style="font-weight:bold">use</span> <span style="font-weight:bold;color:plum">:</span>io<br>
+        <br>
+         &nbsp;&nbsp;<span style="color:grey">@ create dimension Δ1</span><br>
+         &nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> Δ1 <br>
+         &nbsp;&nbsp;&nbsp;<span style="color:grey">@ name A is in Δ1</span><br>
+         &nbsp;&nbsp;&nbsp;A <span style="font-weight:bold;color:plum">=</span> <span style="color:plum">5</span><br>
+         &nbsp;&nbsp;&nbsp;<span style="color:grey">@ create dimension Δ2</span><br>
+         &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">dim</span> Δ2 <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:grey">@ name A was copied to Δ2 from Δ1; name B is defined in Δ2</span><br>
+         &nbsp;&nbsp;&nbsp;&nbsp;B <span style="font-weight:bold;color:plum">=</span> A<br>
+         &nbsp;&nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> Δ2<br>
+         &nbsp;&nbsp;&nbsp;<span style="font-weight:bold">dimwait</span> <span style="font-weight:bold;color:plum">:</span>Δ2<br>
+         &nbsp;&nbsp;&nbsp;C <span style="font-weight:bold;color:plum">=</span> B <span style="color:grey">@ ERROR: name B was not defined in Δ1</span><br>
+         &nbsp;&nbsp;<span style="font-weight:bold;color:plum">enddim</span> Δ1<br>
+      </code>
+      </div>
+      <div class="column">
+        <img src="../img/tut/namespaces_dimensions.png" style="width:512px;height:256px;">
+      </div>
+      </div>
+    </div>
+    <div id="interaction">
+      <h2 align="middle">Interacting via the Ether</h2>
+      <p>
+        How can we then interact between dimensions? Well, all of the dimensions are, formally speaking, executed inside ether. Ether is also omnipresent in any dimension, function, or ritual. Technically though, that simply means you have access to ether variable namespace wherever you write your code. This namespace is dynamic and united (meaning that there's only one ether and its names at any given point are the same for all dimensions). Syntax details on defining names in ether were described <a href="tut1.html#CnV">here</a>. So, to share data between dimensions you simply put it into ether and expect it to be accessible from elsewhere. A useful thing in such cases will be "<a href="doc.base.html#aetherwait">aetherwait</a>" <br>
+      </p>
+    </div>
+    <div id="rituals">
+      <h2 align="middle">Rituals</h2>
+      <p>
+        Rituals are essentially the same as dimensions but they rave no names, they cannot be nested, and, most importantly, they are infinitely looped. Interpreter does not wait for them to end to finish the program entirely.<br>
+        <code>
+          <br>
+           &nbsp;&nbsp;<span style="color:grey">@ imagine that we import some libraries here</span><br>
+           <br>
+           &nbsp;&nbsp;<span style="color:grey">@ creating a ritual</span><br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">ritual</span><br>
+           &nbsp;&nbsp;...<br>
+           &nbsp;&nbsp;<span style="font-weight:bold;color:plum">endrit</span><br>
+        </code>
+      </p>
+    </div>
+    <p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p><p>&nbsp</p>
+  </div>
+</body>
+</html>
